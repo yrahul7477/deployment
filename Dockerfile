@@ -1,13 +1,13 @@
-
+# Use Maven to build the project
 FROM maven:3.8.5-openjdk-17 AS build
+WORKDIR /app
 COPY . .
 RUN mvn clean package -DskipTests
 
-# Use a Java runtime as base image
+# Use a minimal JDK image for the runtime
 FROM openjdk:17.0.1-jdk-slim
-
-# Copy the Spring Boot application JAR file into the container
-COPY --from=build /target/MangalaMuhurtham-0.0.1-SNAPSHOT.jar MangalaMuhurtham
+WORKDIR /app
+COPY --from=build /app/target/MangalaMuhurtham-0.0.1-SNAPSHOT.jar MangalaMuhurtham-0.0.1-SNAPSHOT.jar
 
 # Expose the port your Spring Boot application uses (e.g., 8080)
 EXPOSE 8080
