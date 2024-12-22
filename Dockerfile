@@ -7,10 +7,10 @@ RUN mvn clean package -DskipTests
 FROM openjdk:17.0.1-jdk-slim
 
 # Copy the Spring Boot application JAR file into the container
-COPY --from=build /target/MANGALA-MUHURTHAM-BACKEND-0.0.1-SNAPSHOT.jar MANGALA-MUHURTHAM-BACKEND
+COPY --from=build /target/MangalaMuhurtham-0.0.1-SNAPSHOT.jar MangalaMuhurtham
 
 # Expose the port your Spring Boot application uses (e.g., 8080)
 EXPOSE 8080
 
 # Define the command to run your application
-CMD ["java", "-jar", "MANGALA-MUHURTHAM-BACKEND.jar"]
+CMD ["java", "-jar", "MangalaMuhurtham-0.0.1-SNAPSHOT.jar"]
