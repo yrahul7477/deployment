@@ -61,7 +61,6 @@ com\santu\dto\request\PhysicalAttributesRequestDTO.class
 com\santu\dto\request\ContactRequest.class
 com\santu\services\jwt\UserServiceImpl.class
 com\santu\services\interfac\FamilyInformationService.class
-com\santu\util\DotenvLoader.class
 com\santu\services\interfac\TestimonialService.class
 com\santu\dto\request\FAQRequest.class
 com\santu\services\impl\PhysicalAttributesServiceImpl.class
